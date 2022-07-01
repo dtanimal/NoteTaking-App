@@ -1,11 +1,13 @@
-FROM node:17.9.0-alpine
+FROM node:17-alpine
 
 WORKDIR /app
 
-COPY ./package.json ./
-COPY ./package-lock.json ./
+COPY package.json .
+
 RUN npm install
 
-COPY ./ ./
+COPY . .
 
-CMD [ "npm", "start" ]
+EXPOSE 3000
+
+CMD ["npm", "start"]
