@@ -1,23 +1,22 @@
-# name: CI/CD for main branch
+name: CI/CD for main branch
 
-# on:
-#   push:
+on:
+  push:
 
-# jobs:
-#   quality:
-#     name: Quality
-#     runs-on: ubuntu-latest
+jobs:
+  quality:
+    name: Quality
+    runs-on: ubuntu-latest
 
-#     # steps:
-#     #   - uses: actions/checkout@v3
-#     #   - run: npm run check-code-format
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm run check-code-format
 
-#   build:
-#     name: Build & Test
-#     runs-on: ubuntu-latest
+  build:
+    name: Build & Test
+    runs-on: ubuntu-latest
 
-#     steps:
-#       - uses: actions/checkout@v3
-#       - run: npm install
-#       - run: npm test
-# # deploy:
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm install
+      - run: npm test
