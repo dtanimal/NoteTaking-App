@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  api:
+    build: ./notetaking-app
+    container_name: notetaking_container
+    ports:
+    - '3000:3000'
+    volumes:
+      - ./notetaking-app:/app
+      - ./app/node_modules
